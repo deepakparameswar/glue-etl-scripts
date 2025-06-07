@@ -1,6 +1,6 @@
 {
   "name" : "sampleETLjobDPK",
-  "jobMode" : "VISUAL",
+  "jobMode" : "SCRIPT",
   "description" : "",
   "role" : "arn:aws:iam::430118834478:role/nishant-training-glue-role",
   "executionProperty" : {
