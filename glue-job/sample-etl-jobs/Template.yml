@@ -27,8 +27,8 @@ Resources:
     Properties:
       Command:
         Name: glueetl
-        ScriptLocation: s3://dpk-glue-bucket/scripts/sample_etl_job.py
-      Role: !GetAtt GlueJobRole.Arn
+        ScriptLocation: s3://dpk-glue-bucket/scripts/simple_etl_job.py
+      Role: "arn:aws:iam::430118834478:role/nishant-training-glue-role"
       DefaultArguments:
         "--TempDir": "s3://dpk-glue-bucket/temp/"
         "--job-language": "python"
