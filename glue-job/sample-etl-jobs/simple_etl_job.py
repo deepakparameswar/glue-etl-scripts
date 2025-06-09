@@ -14,7 +14,7 @@ job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
  
 # Read CSV from S3
-input_path = "s3://nishant-glue-bucket-234/input/sample.csv"
+input_path = "s3://dpk-glue-bucket/input/sample.csv"
 datasource = glueContext.create_dynamic_frame.from_options(
     connection_type="s3",
     connection_options={"paths": [input_path], "recurse": True},
@@ -39,7 +39,7 @@ print("Number of rows in filtered_data:", filtered_data.count())
 filtered_data.show(5)
  
 # Write output as Parquet only if there is data
-output_path = "s3://nishant-glue-bucket-234/output/"
+output_path = "s3://dpk-glue-bucket/output/"
 if filtered_data.count() > 0:
     glueContext.write_dynamic_frame.from_options(
         filtered_data,
